@@ -1,0 +1,23 @@
+{% extends "piso/indice.html" %}
+{% block resultado %}
+	<center><h2>Lista de productos</h2>
+	<form id="contact-form" method='post' action='' enctype="multipart/form-data">{% csrf_token %}
+	{{form.as_p}}
+	<input type="submit" name="submit" value="Enviar">
+	</form>
+
+	<section class="perfil">
+
+	<center><h2>Lista de Productos</h2></center>
+	{% for x in prodis %}
+	<article>
+	<center><h2>TITULO</h2></center>
+	<center><p >Numero producto: {{x.Numeroproducto}}</p></center>
+	</article>
+	{% endfor %}
+	</section>
+	 <br/>
+	 <br/>
+
+{% endblock resultado %}
+

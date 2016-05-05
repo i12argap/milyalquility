@@ -1,0 +1,14 @@
+{% extends "piso/indice.html" %}
+{% block resultado %}
+	<p><img class="alineadoTextoImagenArriba" src="{{nombre.imagen.url}}"   width="120px" height="120px"/></p>
+	<section class="zurdo">
+	<center><h2 >Nombre: {{nombre.nombre}}</h2>
+	<h2>Sexo: {{nombre.sexo}}</h2>
+	<h2>Edad: {{nombre.edad}}</h2>
+	
+	</section>
+	 <br/>
+	 <br/>
+	
+{% endblock resultado %}
+

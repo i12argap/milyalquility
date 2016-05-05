@@ -1,0 +1,26 @@
+{% extends "piso/indice.html" %}
+{% block resultado %}
+	<center><h2>Crear Tareas</h2>
+	<form id="contact-form" method='post' action='' enctype="multipart/form-data">{% csrf_token %}
+	{{form.as_p}}
+	<input type="submit" name="submit" value="Publicar">
+	</form>
+
+	<section class="modelo">
+	<center><h2>Tareas</h2>
+	{% for x in tar %}
+	<article>
+		<center><h3>Turno</h3></center>
+		<center><h4>Limpieza: {{x.Limpieza}}</h4>
+		<h4>Basura: {{x.Basura}}</h4>
+		<h4>Extra: {{x.Extra}}</h4>
+		<h4>Semana: {{x.Semana}}</h4>
+		<h4>Mes: {{x.MesTarea}}</h4></center>
+	</article>
+	{% endfor %}
+	</section>
+	 <br/>
+	 <br/>
+	
+{% endblock resultado %}
+

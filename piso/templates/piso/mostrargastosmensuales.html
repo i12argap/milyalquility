@@ -1,0 +1,29 @@
+{% extends "piso/indice.html" %}
+{% block resultado %}
+
+	<center><h2>Crear Gastos Mensuales del Piso</h2>
+	<form id="contact-form" method='post' action='' enctype="multipart/form-data">{% csrf_token %}
+	{{form.as_p}}
+	<input type="submit" name="submit" value="Enviar">
+	</form>
+
+	<section class="modelo">
+
+	<center><h2>Gastos Mensuales del Piso</h2></center>
+	{% for x in dinero %}
+	<article>
+	<center><h3>Factura</h3></center>
+	<center><h4 >Mes: {{x.Mes}}</h4>
+	<h4>Precio Piso: {{x.PrecioPiso}}</h4>
+	<h4>Precio Gas: {{x.PrecioGas}}</h4>
+	<h4>Precio Luz: {{x.PrecioLuz}}</h4>
+	<h4>Precio Internet: {{x.PrecioInternet}}</h4>
+	<h4>Precio Total: {{x.PrecioTotal}}</h4></center>
+	</article>
+	{% endfor %}
+	</section>
+	 <br/>
+	 <br/>
+
+{% endblock resultado %}
+

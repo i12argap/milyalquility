@@ -1,0 +1,8 @@
+{% extends "piso/vista.html" %}
+{% block resultado %}
+
+	<form id='contact-form' method='post' action=''>{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" name="submit" value="Entrar">
+	</form>
+{% endblock resultado %}

@@ -1,0 +1,78 @@
+	{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<div class="contenedor">
+	<head>
+		<metacharset="UTF-8">
+		<title>Picompi</title>
+<link rel="stylesheet" href="{% static "css/estilos.css" %}">
+<link rel="stylesheet" href="{% static "css/ejemplo.css" %}">
+
+<link rel="stylesheet" href="{% static "css/fonts.css" %}">
+
+
+
+
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	</head>
+	<body>
+		<header>
+			<div class="logotipo">
+				<img src="/static/css/prueba.png " alt="" >
+			</div>
+			{% block opciones %}
+			<div class="menu_bar">
+				<a class="bt-menu" href="#"><span class="icon-list2"></span>Menu</a>
+			</div>
+			{% endblock opciones %}
+			
+			<nav>
+				<ul>
+				<li><a href="http://127.0.0.1:8000/"><span class="icon-home3"> </span>Inicio</a></li>
+				{% if n %}
+
+				<li><a href="http://127.0.0.1:8000/piso/crear"><span class="icon-pencil2"></span>Modificar datos</a></li>
+				<li><a href="http://127.0.0.1:8000/piso/mostrar"><span class="icon-happy"></span>Perfil</a></li>
+				<li><a href="http://127.0.0.1:8000/piso/Gastosmensu"><span class="icon-envelop"></span>Gastos Mensuales</a></li>
+				<li><a href="http://127.0.0.1:8000/piso/tarlimp"><span class="icon-pacman"></span><span class="badge pull-right">{{ps}}</span>Tareas</a></li>
+				<li><a href="http://127.0.0.1:8000/piso/listacompra"><span class="icon-pencil"></span><span class="badge pull-right">{{ps}}</span>Lista de la compra</a></li>
+<li><a href="http://127.0.0.1:8000/piso/notas"><span class="icon-pencil2"></span>Notas</a></li>
+				<li><a href="http://127.0.0.1:8000/piso/cerrar"><span class="icon-exit"></span>Cerrar</a></li>
+				
+				{% else %}
+				<li><a href="http://127.0.0.1:8000/piso/usuario"><span class="icon-pencil"></span>Registrar</a></li>
+				<li><a href="http://127.0.0.1:8000/piso/login"><span class="icon-github4"></span>Login</a></li>
+				{% endif %}
+				</ul>
+			</nav>
+			
+		</header>
+
+		<section class="main">
+			<section class="articles">	
+				<article>
+					{% block resultado %}
+
+						<center><h1>Bienvenidos a Picompi</h1>
+						
+						<img src="/static/css/inicio.jpg " alt="" >
+						
+						<p>Con nuestra ayuda podrás organizar fácilmente todas las tareas que se originan en la convivencia de un piso de estudiantes</p>
+
+					{% endblock resultado %}
+				</article>
+				
+			</section>
+		</section>
+		<footer>
+			<p>© Todos los derechos reservados a Pilar Arjona </p>
+		</footer>
+	</body>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+	<script src="{% static "css/menu.js" %}"></script>
+	
+	<script src="{% static "css/ventana.js" %}"></script>
+</div>
+</html>

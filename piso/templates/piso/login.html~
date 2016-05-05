@@ -1,0 +1,10 @@
+{% load staticfiles %}
+{% extends "piso/indice.html" %}
+{% block resultado %}
+
+	<form id="contact-form" method='post' action=''>{% csrf_token %}
+	{{form.as_p}}
+	<input type="submit" name="submit" value="Loguearse">
+	</form>
+
+{% endblock resultado %}
